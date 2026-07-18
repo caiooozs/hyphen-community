@@ -60,22 +60,24 @@ export default function Hero() {
         className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto px-4 z-10 animate-hero-element"
         style={{ animationDelay: "0.8s" }}
       >
-        <Button className="h-12 w-full sm:w-auto px-6 font-semibold shadow-lg shadow-blue-600/15 hover:shadow-blue-600/35 transition-all">
           <a
             href="https://linktr.ee/hyphencommunity"
             target="_blank"
             rel="noopener noreferrer"
           >
+        <Button className="h-12 w-full sm:w-auto px-6 font-semibold shadow-lg shadow-blue-600/15 hover:shadow-blue-600/35 transition-all">
             Entrar na comunidade
-          </a>
           <IoIosArrowForward />
         </Button>
-        <Button
-          className="h-12 w-full sm:w-auto px-6 font-semibold"
-          variant={"outline"}
-        >
-          <a href="#channels"> Saiba mais</a>
-        </Button>
+          </a>
+        <a href="#channels">
+          <Button
+            className="h-12 w-full sm:w-auto px-6 font-semibold"
+            variant={"outline"}
+          >
+            Saiba mais
+          </Button>
+        </a>
       </div>
 
       {/* Subtle indicator hint for scrolling */}
