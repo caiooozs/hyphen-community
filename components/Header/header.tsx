@@ -32,9 +32,10 @@ export default function Header() {
     >
       <div className="w-full md:w-auto flex justify-between items-center">
         <div className="flex items-center gap-2">
-          <h1 className="text-xl font-bold tracking-wider">Hyphen</h1>
+          <a href="#" className="text-xl font-bold tracking-wider">
+            HYPHEN COMMUNITY
+          </a>
         </div>
-        {/* Burger Button for Mobile */}
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           className="md:hidden p-1.5 rounded-lg hover:bg-blue-900/50 transition-colors focus:outline-none"
@@ -48,7 +49,6 @@ export default function Header() {
         </button>
       </div>
 
-      {/* Navigation Links - Responsive */}
       <nav
         className={`${
           isMenuOpen ? "flex" : "hidden"
@@ -75,16 +75,16 @@ export default function Header() {
         >
           Conectar-se
         </a>
-          <a
-            href="https://linktr.ee/hyphencommunity"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-        <Button className="text-black bg-white transition-all transform hover:text-blue-700 text-xs md:text-sm px-4 py-1.5 md:py-2 w-full md:w-auto mt-2 md:mt-0">
+        <a
+          href="https://linktr.ee/hyphencommunity"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Button className="text-black bg-white transition-all transform hover:text-blue-700 text-xs md:text-sm px-4 py-1.5 md:py-2 w-full md:w-auto mt-2 md:mt-0">
             Participe agora
-          <FaArrowRight />
-        </Button>
-          </a>
+            <FaArrowRight />
+          </Button>
+        </a>
       </nav>
     </header>
   );
