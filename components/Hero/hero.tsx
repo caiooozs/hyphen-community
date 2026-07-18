@@ -33,12 +33,12 @@ export default function Hero() {
           className="mb-6 md:mb-8 animate-hero-element"
           style={{ animationDelay: "0.4s" }}
         >
-          <h1 className="text-3xl sm:text-4xl md:text-6xl font-light tracking-tight text-gray-900 leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-light tracking-tight text-gray-900 leading-tight">
             A COMUNIDADE QUE
           </h1>
           <div className="min-h-[50px] md:min-h-[75px] mt-2 flex justify-center items-center">
             <TypingAnimation
-              className="text-blue-700 font-bold text-3xl sm:text-4xl md:text-6xl tracking-tight"
+              className="text-blue-700 font-bold text-2xl sm:text-4xl md:text-5xl tracking-tight"
               words={words}
               loop={true}
               duration={70}
