@@ -4,6 +4,7 @@ import About from "@/components/About/about";
 import Ecosystem from "@/components/Ecosystem/ecosystem";
 import Channels from "@/components/Channels/channels";
 import Footer from "@/components/Footer/footer";
+import { Team } from "@/components/Team/team";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
         <About />
         <Ecosystem />
         <Channels />
+        <Team />
         <Footer />
       </div>
     </>

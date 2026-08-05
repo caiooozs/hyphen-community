@@ -5,11 +5,12 @@ import { BsStars } from "react-icons/bs";
 import { Badge } from "../ui/badge";
 import { Button } from "../ui/button";
 import { IoIosArrowForward } from "react-icons/io";
+import { LightRays } from "../ui/light-rays";
 
 export default function Hero() {
   const words = ["CONECTA!", "ENSINA!", "TE AJUDA A CRESCER NA ÁREA!"];
   return (
-    <section className="flex flex-col justify-center items-center min-h-[90vh] py-16 px-4 md:px-6 w-full bg-white relative overflow-hidden">
+    <section className="flex flex-col justify-center items-center min-h-[90vh] py-16 px-4 md:px-6 w-full bg-black relative overflow-hidden">
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
 
       <div
@@ -18,11 +19,11 @@ export default function Hero() {
       >
         <Badge
           variant={"outline"}
-          className="p-3 gap-1 border-blue-200/60 bg-blue-50/50 backdrop-blur-sm"
+          className="p-3 gap-1 border-blue-500/20 bg-slate-900 backdrop-blur-sm"
         >
           <BsStars className="text-blue-600" />
-          <Separator orientation="vertical" className="bg-blue-100" />
-          <AnimatedShinyText className="italic text-xs md:text-sm">
+          <Separator orientation="vertical" className="bg-blue-500/20" />
+          <AnimatedShinyText className="italic text-xs md:text-sm text-white">
             Bem vindos à Hyphen Community!
           </AnimatedShinyText>
         </Badge>
@@ -33,7 +34,7 @@ export default function Hero() {
           className="mb-6 md:mb-8 animate-hero-element"
           style={{ animationDelay: "0.4s" }}
         >
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-light tracking-tight text-gray-900 leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-light tracking-tight text-white leading-tight">
             A COMUNIDADE QUE
           </h1>
           <div className="min-h-[50px] md:min-h-[75px] mt-2 flex justify-center items-center">
@@ -47,7 +48,7 @@ export default function Hero() {
         </div>
 
         <p
-          className="text-sm sm:text-md md:text-lg text-gray-600 mb-8 max-w-2xl px-2 leading-relaxed animate-hero-element"
+          className="text-sm sm:text-md md:text-lg text-gray-300 mb-8 max-w-2xl px-2 leading-relaxed animate-hero-element"
           style={{ animationDelay: "0.6s" }}
         >
           A <span className="text-blue-700 font-bold">Hyphen</span> é o ponto de
@@ -87,6 +88,7 @@ export default function Hero() {
           <div className="w-0.5 h-1 bg-gray-400 rounded-full animate-scroll-dot" />
         </div>
       </div>
+      <LightRays />
     </section>
   );
 }

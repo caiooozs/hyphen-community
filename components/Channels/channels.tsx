@@ -19,16 +19,6 @@ const channels = [
     cardGlow: "hover:shadow-indigo-500/15",
   },
   {
-    icon: <FaWhatsapp className="text-2xl text-white" />,
-    iconBg: "bg-gradient-to-br from-green-400 to-emerald-600",
-    title: "WhatsApp",
-    description:
-      "Comunidade para trocas rápidas, avisos e oportunidades do dia.",
-    link: "https://chat.whatsapp.com/Gyh3bmFqZUVKlZ9KLTNROq",
-    borderGradient: "from-green-400/40 via-emerald-500/40 to-teal-500/40",
-    cardGlow: "hover:shadow-green-500/15",
-  },
-  {
     icon: <FaInstagram className="text-2xl text-white" />,
     iconBg: "bg-gradient-to-br from-pink-500 via-rose-500 to-purple-600",
     title: "Instagram",
@@ -46,34 +36,34 @@ export default function Channels() {
     <section
       id="channels"
       ref={sectionRef}
-      className="flex flex-col justify-center items-center min-h-[90vh] py-16 px-4 md:px-6 w-full bg-white relative overflow-hidden"
+      className="flex flex-col justify-center items-center min-h-[90vh] py-16 px-4 md:px-6 w-full bg-gray-900 relative overflow-hidden"
     >
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-500/[0.01] rounded-full blur-3xl pointer-events-none" />
 
       <div className="animate-on-scroll mb-4 z-10">
         <Badge
           variant="outline"
-          className="px-4 py-2 gap-2 border-gray-300 text-gray-600 bg-gray-50/50 backdrop-blur-sm"
+          className="px-4 py-2 gap-2 border-gray-700 text-gray-300 bg-gray-900/50 backdrop-blur-sm"
         >
           <LuShare2 className="text-sm" />
           Conecte-se
         </Badge>
       </div>
 
-      <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-gray-900 mb-3 animate-on-scroll z-10">
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-white mb-3 animate-on-scroll z-10">
         Entre nos nossos{" "}
         <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600">
           canais
         </span>
       </h2>
 
-      <p className="text-gray-500 text-center text-sm sm:text-base md:text-lg mb-10 md:mb-12 max-w-2xl px-2 animate-on-scroll z-10">
+      <p className="text-gray-400 text-center text-sm sm:text-base md:text-lg mb-10 md:mb-12 max-w-2xl px-2 animate-on-scroll z-10">
         Escolha o canal que mais combina com você e comece a fazer parte da
         comunidade agora mesmo.
       </p>
 
       {/* Channel cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-6xl z-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-6xl z-10">
         {channels.map((channel, index) => (
           <Card
             key={index}

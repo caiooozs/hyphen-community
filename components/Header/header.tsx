@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Button } from "../ui/button";
 import { FaArrowRight } from "react-icons/fa6";
 import { HiMenu, HiX } from "react-icons/hi";
+import { SparklesText } from "../ui/sparkles-text";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -32,7 +33,7 @@ export default function Header() {
     >
       <div className="w-full md:w-auto flex justify-between items-center">
         <div className="flex items-center gap-2">
-          <a href="#" className="text-xl font-bold tracking-wider">
+          <a href="/" className="text-xl font-bold tracking-wider">
             HYPHEN COMMUNITY
           </a>
         </div>
@@ -80,7 +81,7 @@ export default function Header() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Button className="text-black bg-white transition-all transform hover:text-blue-700 text-xs md:text-sm px-4 py-1.5 md:py-2 w-full md:w-auto mt-2 md:mt-0">
+          <Button className="text-white bg-black transition-all transform hover:text-blue-400 text-xs md:text-sm px-4 py-1.5 md:py-2 w-full md:w-auto mt-2 md:mt-0">
             Participe agora
             <FaArrowRight />
           </Button>
