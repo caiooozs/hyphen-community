@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { SparklesText } from "@/components/ui/sparkles-text";
+import { useRef, type MouseEvent } from "react";
 
 const messages = [
   { name: "M", avatar: "bg-orange-100 text-orange-600", text: "Pessoal, consegui minha primeira vaga de Dev graças às dicas daqui! 🎉" },
@@ -14,8 +15,29 @@ const messages = [
 ];
 
 export default function MockupUI() {
+  const mockupRef = useRef<HTMLDivElement>(null);
+
+  const handleMouseMove = (event: MouseEvent<HTMLDivElement>) => {
+    const bounds = event.currentTarget.getBoundingClientRect();
+    const horizontalPosition = (event.clientX - bounds.left) / bounds.width - 0.5;
+    const verticalPosition = (event.clientY - bounds.top) / bounds.height - 0.5;
+
+    mockupRef.current?.style.setProperty("--hover-rotate-x", `${verticalPosition * -10}deg`);
+    mockupRef.current?.style.setProperty("--hover-rotate-y", `${horizontalPosition * 12}deg`);
+  };
+
+  const resetTilt = () => {
+    mockupRef.current?.style.setProperty("--hover-rotate-x", "0deg");
+    mockupRef.current?.style.setProperty("--hover-rotate-y", "0deg");
+  };
+
   return (
-    <div className="hover-3d relative w-full max-w-[420px] aspect-[3/4]">
+    <div
+      ref={mockupRef}
+      className="hover-3d relative w-full max-w-[420px] aspect-[3/4]"
+      onMouseMove={handleMouseMove}
+      onMouseLeave={resetTilt}
+    >
       <div className="w-full h-full relative z-0 !overflow-visible">
         <div className="absolute inset-0 bg-primary/10 rounded-3xl transform rotate-3 scale-105 blur-sm" />
         <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent rounded-3xl transform -rotate-2" />

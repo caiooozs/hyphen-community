@@ -244,10 +244,11 @@
     transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
     filter 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform;
+  transform: translateY(0) rotateX(var(--hover-rotate-x, 0deg)) rotateY(var(--hover-rotate-y, 0deg)) scale(1);
 }
 
 .hover-3d:hover > div {
-  transform: translateY(-10px) rotateX(5deg) rotateY(-7deg) scale(1.015);
+  transform: translateY(-10px) rotateX(var(--hover-rotate-x, 0deg)) rotateY(var(--hover-rotate-y, 0deg)) scale(1.015);
   filter: drop-shadow(14px 20px 20px rgba(37, 99, 235, 0.2));
 }
 
