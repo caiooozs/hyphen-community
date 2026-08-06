@@ -56,15 +56,15 @@ export default function MockupUI() {
           </div>
         </motion.div>
 
-        <motion.div className="absolute -left-30 bottom-8 bg-white px-4 py-3 rounded-2xl shadow-xl border border-border flex items-center gap-3 z-10" initial={{ scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ delay: 4.8, type: "spring" }}>
+        <motion.div className="absolute -left-30 bottom-8 hidden bg-white px-4 py-3 rounded-2xl shadow-xl border border-border md:flex items-center gap-3 z-10" initial={{ scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ delay: 4.8, type: "spring" }}>
           <div className="w-3 h-3 rounded-full bg-green-500" /><span className="font-semibold text-sm text-foreground">Novos membros!</span>
         </motion.div>
-        <motion.div className="absolute -right-24 top-32 bg-primary text-primary-foreground px-5 py-3 rounded-2xl shadow-xl flex items-center gap-3 z-10" initial={{ scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ delay: 5, type: "spring" }}>
+        <motion.div className="absolute -right-24 top-32 hidden bg-primary text-primary-foreground px-5 py-3 rounded-2xl shadow-xl md:flex items-center gap-3 z-10" initial={{ scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ delay: 5, type: "spring" }}>
           <SparklesText sparklesCount={6} colors={{ first: '#ffffffff', second: '#c0c0c0ff', } } className="text-sm font-light">
             Comunidade ativa 🚀
           </SparklesText>
         </motion.div>
-        <motion.div className="absolute -left-34 top-52 bg-primary text-primary-foreground px-5 py-3 rounded-2xl shadow-xl flex items-center gap-3 z-10" initial={{ scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ delay: 5, type: "spring" }}>
+        <motion.div className="absolute -left-34 top-52 hidden bg-primary text-primary-foreground px-5 py-3 rounded-2xl shadow-xl md:flex items-center gap-3 z-10" initial={{ scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ delay: 5, type: "spring" }}>
           <SparklesText sparklesCount={6} colors={{ first: '#ffffffff', second: '#c0c0c0ff', } } className="text-sm font-light">
             Conhecimento 📃
           </SparklesText>
