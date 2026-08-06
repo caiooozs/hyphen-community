@@ -5,6 +5,7 @@ import Ecosystem from "@/components/Ecosystem/ecosystem";
 import Channels from "@/components/Channels/channels";
 import Footer from "@/components/Footer/footer";
 import { Team } from "@/components/Team/team";
+import MockupUI from "@/components/Hero/MOCKUP/heroMockup";
 
 export default function Home() {
   return (
@@ -15,7 +16,6 @@ export default function Home() {
         <About />
         <Ecosystem />
         <Channels />
-        <Team />
         <Footer />
       </div>
     </>

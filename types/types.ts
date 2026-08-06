@@ -1,8 +1,7 @@
 import { ReactNode } from "react";
 
 export interface EcosystemCardProps {
-  icon: ReactNode;
-  iconBg: string;
+  number: number
   title: string;
   titleColor: string;
   items: string[];

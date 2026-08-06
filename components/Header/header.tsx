@@ -5,14 +5,22 @@ import { Button } from "../ui/button";
 import { FaArrowRight } from "react-icons/fa6";
 import { HiMenu, HiX } from "react-icons/hi";
 import { FiUsers, FiInfo, FiMessageCircle } from "react-icons/fi";
+import { FaUsers } from "react-icons/fa";
+import { SparklesText } from "../ui/sparkles-text";
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "../ui/hover-card";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isHubOpen, setIsHubOpen] = useState(false);
 
   return (
     <>
       <div className="fixed top-4 left-0 right-0 z-50 flex justify-center px-4 w-full">
-        <header className="w-full max-w-5xl bg-black/40 backdrop-blur-md border border-white/10 rounded-full shadow-xl flex items-center justify-between px-6 py-3 transition-all">
+        <header className="w-full max-w-7xl bg-black/40 backdrop-blur-md border border-white/10 rounded-full shadow-xl flex items-center justify-between px-5 py-3 transition-all lg:px-6">
           <div className="flex items-center">
             <a
               href="/"
@@ -23,7 +31,7 @@ export default function Header() {
             </a>
           </div>
 
-          <nav className="hidden md:flex items-center gap-6">
+          <nav className="hidden lg:flex items-center gap-4 xl:gap-5">
             <a
               href="#ecosystem"
               className="flex items-center gap-2 text-white/90 hover:text-white transition-colors text-sm font-medium"
@@ -38,6 +46,7 @@ export default function Header() {
               <FiInfo className="text-lg" />
               Sobre
             </a>
+
             <a
               href="#channels"
               className="flex items-center gap-2 text-white/90 hover:text-white transition-colors text-sm font-medium"
@@ -46,22 +55,48 @@ export default function Header() {
               Conectar-se
             </a>
             <a
+              href="#team"
+              className="flex items-center gap-2 text-white/90 hover:text-white transition-colors text-sm font-medium"
+            >
+              <FaUsers className="text-base" />
+              Equipe
+            </a>
+            <HoverCard open={isHubOpen} onOpenChange={setIsHubOpen}>
+              <HoverCardTrigger asChild>
+                <button
+                  type="button"
+                  onClick={() => setIsHubOpen(true)}
+                  className="relative flex items-center text-sm font-medium text-white/90 hover:text-white transition-colors"
+                >
+                  <SparklesText
+                    sparklesCount={5}
+                    colors={{ first: "#60a5fa", second: "#2563eb" }}
+                    className="text-sm font-medium leading-none"
+                  >
+                    HyphenHub
+                  </SparklesText>
+                </button>
+              </HoverCardTrigger>
+              <HoverCardContent className="w-32 bg-white text-black font-semibold">
+                Em breve...
+              </HoverCardContent>
+            </HoverCard>
+            <a
               href="https://linktr.ee/hyphencommunity"
               target="_blank"
               rel="noopener noreferrer"
               className="ml-2"
             >
               <Button className="text-white bg-white/10 hover:bg-white/20 border border-white/20 rounded-full transition-all text-sm px-5 py-2 h-auto">
-                Participe agora
+                Junte-se a nós!
                 <FaArrowRight className="ml-2" />
               </Button>
             </a>
           </nav>
 
-          {/* Mobile Toggle */}
           <button
             onClick={() => setIsMenuOpen(true)}
-            className="md:hidden p-2 rounded-full hover:bg-white/10 transition-colors text-white focus:outline-none"
+            className="lg:hidden p-2 rounded-full hover:bg-white/10 transition-colors text-white focus:outline-none"
             aria-label="Open Menu"
           >
             <HiMenu className="text-2xl" />
@@ -69,16 +104,13 @@ export default function Header() {
         </header>
       </div>
 
-      {/* Mobile Offcanvas Menu */}
-      {/* Overlay */}
       <div
-        className={`fixed inset-0 bg-black/60 backdrop-blur-sm z-[60] transition-opacity duration-300 md:hidden ${isMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
+        className={`fixed inset-0 bg-black/60 backdrop-blur-sm z-[60] transition-opacity duration-300 lg:hidden ${isMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
         onClick={() => setIsMenuOpen(false)}
       ></div>
 
-      {/* Sidebar */}
       <div
-        className={`fixed top-0 right-0 h-full w-[280px] bg-[#111116] border-l border-white/10 z-[70] transform transition-transform duration-300 ease-in-out md:hidden flex flex-col p-6 shadow-2xl ${isMenuOpen ? "translate-x-0" : "translate-x-full"}`}
+        className={`fixed top-0 right-0 h-full w-[280px] bg-[#111116] border-l border-white/10 z-[70] transform transition-transform duration-300 ease-in-out lg:hidden flex flex-col p-6 shadow-2xl ${isMenuOpen ? "translate-x-0" : "translate-x-full"}`}
       >
         <div className="flex justify-end mb-8">
           <button
@@ -114,6 +146,14 @@ export default function Header() {
           >
             <FiMessageCircle className="text-xl" />
             Conectar-se
+          </a>
+          <a
+            href="#team"
+            onClick={() => setIsMenuOpen(false)}
+            className="flex items-center gap-3 text-white/90 hover:text-white transition-colors text-lg font-medium"
+          >
+            <FaUsers className="text-xl" />
+            Equipe
           </a>
           <a
             href="https://linktr.ee/hyphencommunity"

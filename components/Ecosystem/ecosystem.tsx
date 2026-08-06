@@ -14,8 +14,7 @@ import { EcosystemBadgeCard } from "./components/ecosystemBadgeCard";
 
 const pillars = [
   {
-    icon: <IoChatbubbleOutline className="text-2xl text-cyan-400" />,
-    iconBg: "bg-cyan-500/15 border-cyan-500/30",
+    number: 1,
     title: "Comunidade e interação",
     titleColor: "text-cyan-400",
     items: [
@@ -26,8 +25,7 @@ const pillars = [
     ],
   },
   {
-    icon: <FaInstagram className="text-2xl text-pink-400" />,
-    iconBg: "bg-pink-500/15 border-pink-500/30",
+    number: 2,
     title: "Conteúdo e divulgação",
     titleColor: "text-pink-400",
     items: [
@@ -38,8 +36,7 @@ const pillars = [
     ],
   },
   {
-    icon: <TbWorld className="text-2xl text-cyan-400" />,
-    iconBg: "bg-cyan-500/15 border-cyan-500/30",
+    number: 3,
     title: "Centralização e crescimento",
     titleColor: "text-green-400",
     items: [
@@ -73,19 +70,17 @@ export default function Ecosystem() {
     <section
       id="ecosystem"
       ref={sectionRef}
-      className="flex flex-col justify-center items-center min-h-[90vh] py-16 px-4 md:px-6 w-full bg-black relative overflow-hidden"
+      className="flex flex-col justify-center items-center min-h-[90vh] py-16 px-4 md:px-6 w-full bg-gradient-to-r from-[#010411] via-[#080731] to-[#031c55] relative overflow-hidden"
     >
       <div className="absolute top-1/3 right-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-blue-600/[0.03] rounded-full blur-3xl pointer-events-none" />
 
-      <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-white mb-3 animate-on-scroll z-10">
+      <h2 className="text-xl sm:text-2xl md:text-6xl font-bold text-center text-white mb-3 animate-on-scroll z-10">
         Ecossistema{" "}
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 italic">
-          Hyphen
-        </span>
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 italic">Hyphen</span>
       </h2>
 
-      <div className="text-white text-center text-sm sm:text-base md:text-lg mb-10 md:mb-12 max-w-2xl px-2 animate-on-scroll z-10">
-        Três canais, um objetivo:{" "}
+      <div className="text-white text-center text-sm sm:text-base md:text-sm mb-10 md:mb-12 max-w-2xl px-2 animate-on-scroll z-10 italic">
+        Três canais, um objetivo:{ " "}
         <Highlighter action="highlight" color="blue" animationDuration={2000}>
           conectar pessoas, oportunidades e tecnologia.
         </Highlighter>
@@ -95,8 +90,7 @@ export default function Ecosystem() {
         {pillars.map((pillar) => (
           <EcosystemCard
             key={pillar.title}
-            icon={pillar.icon}
-            iconBg={pillar.iconBg}
+            number={pillar.number}
             title={pillar.title}
             titleColor={pillar.titleColor}
             items={pillar.items}

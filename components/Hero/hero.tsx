@@ -6,79 +6,91 @@ import { Badge } from "../ui/badge";
 import { Button } from "../ui/button";
 import { IoIosArrowForward } from "react-icons/io";
 import { LightRays } from "../ui/light-rays";
+import MockupUI from "./MOCKUP/heroMockup";
 
 export default function Hero() {
   const words = ["CONECTA!", "ENSINA!", "TE AJUDA A CRESCER NA ÁREA!"];
   return (
-    <section className="flex flex-col justify-center items-center min-h-[90vh] py-16 px-4 md:px-6 w-full bg-black relative overflow-hidden">
+    <section className="flex flex-col justify-center items-center min-h-[90vh] py-16 px-4 md:px-6 w-full bg-gradient-to-r from-[#010411] via-[#080731] to-[#031c55] relative overflow-hidden">
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
 
-      <div
-        className="animate-hero-element z-10"
-        style={{ animationDelay: "0.2s" }}
-      >
-        <Badge
-          variant={"outline"}
-          className="p-3 gap-1 border-blue-500/20 bg-slate-900 backdrop-blur-sm"
-        >
-          <BsStars className="text-blue-600" />
-          <Separator orientation="vertical" className="bg-blue-500/20" />
-          <AnimatedShinyText className="italic text-xs md:text-sm text-white">
-            Bem vindos à Hyphen Community!
-          </AnimatedShinyText>
-        </Badge>
-      </div>
+      <div className="relative z-10 flex w-full max-w-6xl flex-col items-center gap-10 mt-16 lg:flex-row lg:items-center lg:justify-between lg:gap-20">
+        <div className="flex w-full max-w-3xl flex-col items-center lg:max-w-xl lg:items-start">
+          <div
+            className="animate-hero-element z-10"
+            style={{ animationDelay: "0.2s" }}
+          >
+            <Badge
+              variant={"outline"}
+              className="p-3 gap-1 border-blue-500/20 bg-slate-900 backdrop-blur-sm"
+            >
+              <BsStars className="text-blue-600" />
+              <Separator orientation="vertical" className="bg-blue-500/20" />
+              <AnimatedShinyText className="italic text-xs md:text-sm text-white">
+                Bem vindos à Hyphen Community!
+              </AnimatedShinyText>
+            </Badge>
+          </div>
 
-      <div className="flex flex-col w-full max-w-3xl justify-center items-center text-center mt-6 z-10">
-        <div
-          className="mb-6 md:mb-8 animate-hero-element"
-          style={{ animationDelay: "0.4s" }}
-        >
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-light tracking-tight text-white leading-tight">
-            A COMUNIDADE QUE
-          </h1>
-          <div className="min-h-[50px] md:min-h-[75px] mt-2 flex justify-center items-center">
-            <TypingAnimation
-              className="text-blue-700 font-bold text-2xl sm:text-4xl md:text-5xl tracking-tight"
-              words={words}
-              loop={true}
-              duration={70}
-            />
+          <div className="flex flex-col w-full justify-center items-center text-center mt-6 z-10 lg:items-start lg:text-left">
+            <div
+              className="mb-6 md:mb-8 animate-hero-element"
+              style={{ animationDelay: "0.4s" }}
+            >
+              <h1 className="text-3xl sm:text-4xl md:text-4xl font-light tracking-tight text-white leading-tight">
+                A COMUNIDADE QUE
+              </h1>
+              <div className="min-h-[50px] md:min-h-[75px] mt-2 flex justify-center items-center lg:justify-start">
+                <TypingAnimation
+                  className="text-blue-700 font-bold text-2xl sm:text-4xl md:text-5xl tracking-tight"
+                  words={words}
+                  loop={true}
+                  duration={70}
+                />
+              </div>
+            </div>
+
+            <p
+              className="text-sm sm:text-md md:text-lg text-gray-300 mb-8 max-w-2xl px-2 leading-relaxed animate-hero-element"
+              style={{ animationDelay: "0.6s" }}
+            >
+              A <span className="text-blue-700 font-bold">Hyphen</span> é o
+              ponto de encontro entre estudantes, profissionais e oportunidades.
+              Networking descomplicado para quem está começando na tecnologia.
+            </p>
+          </div>
+
+          <div
+            className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto px-4 z-10 animate-hero-element lg:px-0"
+            style={{ animationDelay: "0.8s" }}
+          >
+            <a
+              href="https://linktr.ee/hyphencommunity"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button className="h-12 w-full sm:w-auto px-6 font-semibold shadow-lg shadow-blue-600/15 hover:shadow-blue-600/35 transition-all">
+                Entrar na comunidade
+                <IoIosArrowForward />
+              </Button>
+            </a>
+            <a href="#channels">
+              <Button
+                className="h-12 w-full sm:w-auto px-6 font-semibold"
+                variant={"outline"}
+              >
+                Saiba mais
+              </Button>
+            </a>
           </div>
         </div>
 
-        <p
-          className="text-sm sm:text-md md:text-lg text-gray-300 mb-8 max-w-2xl px-2 leading-relaxed animate-hero-element"
-          style={{ animationDelay: "0.6s" }}
+        <div
+          className="animate-hero-element w-full max-w-[420px] shrink-0"
+          style={{ animationDelay: "0.25s" }}
         >
-          A <span className="text-blue-700 font-bold">Hyphen</span> é o ponto de
-          encontro entre estudantes, profissionais e oportunidades. Networking
-          descomplicado para quem está começando na tecnologia.
-        </p>
-      </div>
-
-      <div
-        className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto px-4 z-10 animate-hero-element"
-        style={{ animationDelay: "0.8s" }}
-      >
-          <a
-            href="https://linktr.ee/hyphencommunity"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-        <Button className="h-12 w-full sm:w-auto px-6 font-semibold shadow-lg shadow-blue-600/15 hover:shadow-blue-600/35 transition-all">
-            Entrar na comunidade
-          <IoIosArrowForward />
-        </Button>
-          </a>
-        <a href="#channels">
-          <Button
-            className="h-12 w-full sm:w-auto px-6 font-semibold"
-            variant={"outline"}
-          >
-            Saiba mais
-          </Button>
-        </a>
+          <MockupUI />
+        </div>
       </div>
 
       {/* Subtle indicator hint for scrolling */}

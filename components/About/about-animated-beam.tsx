@@ -52,7 +52,7 @@ export function AboutAnimatedBeam() {
             <HiUser className="text-cyan-400 text-xl" />
           </Circle>
           <Circle ref={div4Ref} className="h-20 w-20 bg-gradient-to-br from-slate-900 via-slate-950 to-blue-950 border-cyan-500/30 transition transform-all hover:scale-110 hover:shadow-xl shadow-cyan-300">
-            <span className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">H</span>
+            <span className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500"><img src="/hyphen-logo.png" alt="Hyphen Logo" className="w-16" /></span>
           </Circle>
           <Circle ref={div6Ref}>
             <HiUser className="text-cyan-400 text-xl" />
