@@ -6,6 +6,7 @@ import { FaDiscord, FaWhatsapp, FaInstagram } from "react-icons/fa";
 import { LuShare2 } from "react-icons/lu";
 import { IoIosArrowForward } from "react-icons/io";
 import { Card, CardTitle, CardContent } from "../ui/card";
+import { ChannelsCard } from "./components/channelsCard";
 
 const channels = [
   {
@@ -64,42 +65,17 @@ export default function Channels() {
 
       {/* Channel cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-6xl z-10">
-        {channels.map((channel, index) => (
-          <Card
-            key={index}
-            className={`animate-on-scroll fluid-card-hover group relative rounded-2xl border border-blue-500/10 bg-gradient-to-br from-slate-900 to-blue-950 p-6 md:p-7 shadow-xl shadow-blue-950/10 ring-0 ${channel.cardGlow}`}
-            style={{ transitionDelay: `${index * 120}ms` }}
-          >
-            {/* Colored top border glow */}
-            <div
-              className={`absolute inset-x-0 top-0 h-px bg-gradient-to-r ${channel.borderGradient} rounded-t-2xl`}
-            />
-            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/[0.02] to-transparent pointer-events-none" />
-
-            <div
-              className={`relative flex items-center justify-center w-12 h-12 rounded-xl ${channel.iconBg} mb-6 shadow-lg`}
-            >
-              {channel.icon}
-            </div>
-
-            <CardTitle className="relative text-xl font-bold text-white mb-2">
-              {channel.title}
-            </CardTitle>
-
-            <CardContent className="p-0 relative">
-              <p className="text-gray-400 text-xs sm:text-sm leading-relaxed mb-6">
-                {channel.description}
-              </p>
-
-              <a
-                href={channel.link}
-                className="inline-flex items-center gap-1.5 text-cyan-400 font-semibold text-sm group-hover:text-cyan-300 transition-colors"
-              >
-                Acessar
-                <IoIosArrowForward className="transition-transform group-hover:translate-x-1" />
-              </a>
-            </CardContent>
-          </Card>
+        {channels.map((channel) => (
+          <ChannelsCard
+            key={channel.link}
+            icon={channel.icon}
+            iconBg={channel.iconBg}
+            title={channel.title}
+            description={channel.description}
+            link={channel.link}
+            borderGradient={channel.borderGradient}
+            cardGlow={channel.cardGlow}
+          />
         ))}
       </div>
     </section>

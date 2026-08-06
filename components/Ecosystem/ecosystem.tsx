@@ -9,6 +9,8 @@ import { HiOutlineUserGroup } from "react-icons/hi2";
 import { IoRocketOutline } from "react-icons/io5";
 import { Highlighter } from "../ui/highlighter";
 import { Card, CardTitle, CardContent } from "../ui/card";
+import { EcosystemCard } from "./components/ecosystemCard";
+import { EcosystemBadgeCard } from "./components/ecosystemBadgeCard";
 
 const pillars = [
   {
@@ -89,60 +91,26 @@ export default function Ecosystem() {
         </Highlighter>
       </div>
 
-      {/* 3 pillar cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-6xl mb-8 z-10">
-        {pillars.map((pillar, index) => (
-          <Card
-            key={index}
-            className="animate-on-scroll fluid-card-hover relative rounded-2xl border border-blue-500/20 bg-gradient-to-br from-slate-900 to-blue-950 p-6 md:p-7 shadow-xl shadow-blue-950/10 ring-0"
-            style={{ transitionDelay: `${index * 100}ms` }}
-          >
-            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-cyan-500/5 to-transparent pointer-events-none" />
-
-            <div
-              className={`relative flex items-center justify-center w-12 h-12 rounded-xl ${pillar.iconBg} border mb-5`}
-            >
-              {pillar.icon}
-            </div>
-
-            <CardTitle
-              className={`relative text-lg font-bold ${pillar.titleColor} mb-4`}
-            >
-              {pillar.title}
-            </CardTitle>
-
-            <CardContent className="p-0 relative">
-              <ul className="space-y-2.5">
-                {pillar.items.map((item, i) => (
-                  <li
-                    key={i}
-                    className="flex items-start gap-2 text-gray-300 text-xs sm:text-sm"
-                  >
-                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-cyan-400 flex-shrink-0" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </CardContent>
-          </Card>
+        {pillars.map((pillar) => (
+          <EcosystemCard
+            key={pillar.title}
+            icon={pillar.icon}
+            iconBg={pillar.iconBg}
+            title={pillar.title}
+            titleColor={pillar.titleColor}
+            items={pillar.items}
+          />
         ))}
       </div>
 
-      {/* Bottom badges */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full max-w-6xl z-10">
-        {badges.map((badge, index) => (
-          <Card
-            key={index}
-            className="animate-on-scroll fluid-card-hover flex flex-row items-center gap-3 rounded-xl border border-blue-500/20 bg-gradient-to-r from-slate-900 to-blue-950 px-5 py-4 shadow-lg shadow-blue-950/10 ring-0"
-            style={{ transitionDelay: `${(index + 3) * 100}ms` }}
-          >
-            <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-cyan-500/15 border border-cyan-500/30">
-              {badge.icon}
-            </div>
-            <span className="text-white font-semibold text-xs sm:text-sm">
-              {badge.text}
-            </span>
-          </Card>
+        {badges.map((badge) => (
+          <EcosystemBadgeCard
+            key={badge.text}
+            icon={badge.icon}
+            text={badge.text}
+          />
         ))}
       </div>
     </section>
