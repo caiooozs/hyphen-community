@@ -54,13 +54,6 @@ export default function Header() {
               <FiMessageCircle className="text-lg" />
               Conectar-se
             </a>
-            <a
-              href="#team"
-              className="flex items-center gap-2 text-white/90 hover:text-white transition-colors text-sm font-medium"
-            >
-              <FaUsers className="text-base" />
-              Equipe
-            </a>
             <HoverCard open={isHubOpen} onOpenChange={setIsHubOpen}>
               <HoverCardTrigger asChild>
                 <button
