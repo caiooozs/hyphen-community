@@ -66,12 +66,12 @@ export default function Header() {
                     colors={{ first: "#60a5fa", second: "#2563eb" }}
                     className="text-sm font-medium leading-none"
                   >
-                    HyphenHub
+                    HyphenLab
                   </SparklesText>
                 </button>
               </HoverCardTrigger>
               <HoverCardContent className="w-32 bg-white text-black font-semibold">
-                Em breve...
+                Em breve... 👀
               </HoverCardContent>
             </HoverCard>
             <a
@@ -139,14 +139,6 @@ export default function Header() {
           >
             <FiMessageCircle className="text-xl" />
             Conectar-se
-          </a>
-          <a
-            href="#team"
-            onClick={() => setIsMenuOpen(false)}
-            className="flex items-center gap-3 text-white/90 hover:text-white transition-colors text-lg font-medium"
-          >
-            <FaUsers className="text-xl" />
-            Equipe
           </a>
           <a
             href="https://linktr.ee/hyphencommunity"
