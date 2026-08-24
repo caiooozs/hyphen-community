@@ -56,7 +56,7 @@ export default function MockupUI() {
               </div>
               <div>
                 <div className="font-semibold text-foreground text-sm">Comunidade Hyphen</div>
-                <div className="text-xs text-green-500 flex items-center gap-1 mt-0.5"><span className="w-2 h-2 rounded-full bg-green-500 inline-block" />Online</div>
+                <div className="text-xs text-green-500 flex items-center gap-1 mt-0.5"><span className="w-2 h-2 rounded-full bg-green-500 inline-block" />+100 Membros <span className="font-bold">Online</span></div>
               </div>
             </div>
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-400"><circle cx="12" cy="12" r="1" /><circle cx="12" cy="5" r="1" /><circle cx="12" cy="19" r="1" /></svg>

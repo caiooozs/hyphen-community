@@ -1,23 +1,42 @@
 import { ReactNode } from "react";
 
+import type { SurfaceAccent } from "@/components/ui/surface-card";
+
 export interface EcosystemCardProps {
-  number: number
+  number: number;
   title: string;
-  titleColor: string;
+  accent: SurfaceAccent;
   items: string[];
 }
 
 export interface EcosystemBadgeProps {
   icon: ReactNode;
   text: string;
+  accent?: SurfaceAccent;
 }
 
 export interface ChannelCardProps {
   icon: ReactNode;
-  iconBg: string;
   title: string;
   description: string;
   link: string;
-  borderGradient: string;
-  cardGlow: string;
+  accent: SurfaceAccent;
+}
+
+/** Perfis sociais de um membro. Deixe "" para esconder o ícone. */
+export interface TeamSocials {
+  linkedin?: string;
+  github?: string;
+  instagram?: string;
+  site?: string
+}
+
+export interface TeamCardProps {
+  photo: string;
+  photo_alt: string;
+  name: string;
+  position: string;
+  description: string;
+  socials?: TeamSocials;
+  accent?: SurfaceAccent;
 }

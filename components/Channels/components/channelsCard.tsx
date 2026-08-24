@@ -1,47 +1,55 @@
 import { ChannelCardProps } from "@/types/types";
-import { Card, CardContent, CardTitle } from "@/components/ui/card";
+import {
+  SurfaceCard,
+  SurfaceIcon,
+  SurfaceDivider,
+} from "@/components/ui/surface-card";
 import { IoIosArrowForward } from "react-icons/io";
 
 export const ChannelsCard = ({
   icon,
-  iconBg,
   title,
   description,
   link,
-  borderGradient,
-  cardGlow,
+  accent,
 }: ChannelCardProps) => {
   return (
-    <Card
-      className={`animate-on-scroll fluid-card-hover group relative rounded-2xl border border-blue-500/10 bg-gradient-to-br from-slate-900 to-blue-950 p-6 md:p-7 shadow-xl shadow-blue-950/10 ring-0 ${cardGlow}`}
+    <a
+      href={link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="animate-on-scroll block rounded-2xl focus-visible:ring-2 focus-visible:ring-cyan-400/60 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent focus-visible:outline-none"
     >
-      <div
-        className={`absolute inset-x-0 top-0 h-px bg-gradient-to-r ${borderGradient} rounded-t-2xl`}
-      />
-      <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/[0.02] to-transparent pointer-events-none" />
+      <SurfaceCard accent={accent} padding="lg" className="h-full">
+        <div className="flex items-start justify-between gap-4">
+          <SurfaceIcon className="size-12">{icon}</SurfaceIcon>
+          <span
+            aria-hidden
+            className="grid size-8 place-items-center rounded-full border border-white/10 text-white/40 transition-all duration-500 group-hover/surface:border-white/25 group-hover/surface:text-white"
+          >
+            <IoIosArrowForward className="text-sm transition-transform duration-500 group-hover/surface:translate-x-0.5" />
+          </span>
+        </div>
 
-      <div
-        className={`relative flex items-center justify-center w-12 h-12 rounded-xl ${iconBg} mb-6 shadow-lg`}
-      >
-        {icon}
-      </div>
-      <CardTitle className="relative text-xl font-bold text-white mb-2">
-        {title}
-      </CardTitle>
+        <h3 className="mt-5 text-lg font-bold tracking-tight text-white md:text-xl">
+          {title}
+        </h3>
 
-      <CardContent className="p-0 relative">
-        <p className="text-gray-400 text-xs sm:text-sm leading-relaxed mb-6">
+        <p className="mt-2 text-xs leading-relaxed text-white/60 transition-colors duration-300 group-hover/surface:text-white/75 sm:text-sm">
           {description}
         </p>
 
-        <a
-          href={link}
-          className="inline-flex items-center gap-1.5 text-cyan-400 font-semibold text-sm group-hover:text-cyan-300 transition-colors"
-        >
-          Acessar
-          <IoIosArrowForward className="transition-transform group-hover:translate-x-1" />
-        </a>
-      </CardContent>
-    </Card>
+        <div className="mt-auto pt-6">
+          <SurfaceDivider />
+          <span
+            className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold"
+            style={{ color: "var(--surface-from)" }}
+          >
+            Acessar
+            <IoIosArrowForward className="transition-transform duration-300 group-hover/surface:translate-x-1" />
+          </span>
+        </div>
+      </SurfaceCard>
+    </a>
   );
 };

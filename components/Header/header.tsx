@@ -1,11 +1,16 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { Button } from "../ui/button";
 import { FaArrowRight } from "react-icons/fa6";
 import { HiMenu, HiX } from "react-icons/hi";
-import { FiUsers, FiInfo, FiMessageCircle } from "react-icons/fi";
-import { FaUsers } from "react-icons/fa";
+import {
+  FiUsers,
+  FiInfo,
+  FiMessageCircle,
+  FiUserCheck,
+} from "react-icons/fi";
 import { SparklesText } from "../ui/sparkles-text";
 import {
   HoverCard,
@@ -22,16 +27,16 @@ export default function Header() {
       <div className="fixed top-4 left-0 right-0 z-50 flex justify-center px-4 w-full">
         <header className="w-full max-w-7xl bg-black/40 backdrop-blur-md border border-white/10 rounded-full shadow-xl flex items-center justify-between px-5 py-3 transition-all lg:px-6">
           <div className="flex items-center">
-            <a
+            <Link
               href="/"
               className="flex items-center text-xl font-bold tracking-wider text-white"
             >
               <img src="/hyphen-logo.png" alt="Hyphen" className="h-16" />
               <span className="text-md font-light">Hyphen</span>
-            </a>
+            </Link>
           </div>
 
-          <nav className="hidden lg:flex items-center gap-4 xl:gap-5">
+          <nav className="hidden lg:flex items-center gap-3 xl:gap-5">
             <a
               href="#ecosystem"
               className="flex items-center gap-2 text-white/90 hover:text-white transition-colors text-sm font-medium"
@@ -54,6 +59,13 @@ export default function Header() {
               <FiMessageCircle className="text-lg" />
               Conectar-se
             </a>
+            <a
+              href="#team"
+              className="flex items-center gap-2 text-white/90 hover:text-white transition-colors text-sm font-medium"
+            >
+              <FiUserCheck className="text-lg" />
+              Equipe
+            </a>
             <HoverCard open={isHubOpen} onOpenChange={setIsHubOpen}>
               <HoverCardTrigger asChild>
                 <button
@@ -63,7 +75,7 @@ export default function Header() {
                 >
                   <SparklesText
                     sparklesCount={5}
-                    colors={{ first: "#60a5fa", second: "#2563eb" }}
+                    colors={{ first: "#388E3C", second: "#388E3C" }}
                     className="text-sm font-medium leading-none"
                   >
                     HyphenLab
@@ -139,6 +151,14 @@ export default function Header() {
           >
             <FiMessageCircle className="text-xl" />
             Conectar-se
+          </a>
+          <a
+            href="#team"
+            onClick={() => setIsMenuOpen(false)}
+            className="flex items-center gap-3 text-white/90 hover:text-white transition-colors text-lg font-medium"
+          >
+            <FiUserCheck className="text-xl" />
+            Equipe
           </a>
           <a
             href="https://linktr.ee/hyphencommunity"

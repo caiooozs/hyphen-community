@@ -10,7 +10,7 @@ export default function About() {
     <section
       id="about"
       ref={sectionRef}
-      className="flex flex-col justify-center items-center min-h-[90vh] py-16 px-4 md:px-6 w-full bg-gray-900 shadow-xl relative overflow-hidden"
+      className="scroll-mt-28 flex flex-col justify-center items-center min-h-[90vh] py-16 px-4 md:px-6 w-full bg-gray-900 shadow-xl relative overflow-hidden"
     >
       <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[400px] h-[400px] bg-cyan-500/[0.02] rounded-full blur-3xl pointer-events-none" />
 

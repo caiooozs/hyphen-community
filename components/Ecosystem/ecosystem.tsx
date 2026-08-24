@@ -1,22 +1,24 @@
 "use client";
 
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { IoChatbubbleOutline } from "react-icons/io5";
-import { FaInstagram } from "react-icons/fa";
-import { TbWorld } from "react-icons/tb";
 import { BsCalendarEvent } from "react-icons/bs";
 import { HiOutlineUserGroup } from "react-icons/hi2";
 import { IoRocketOutline } from "react-icons/io5";
 import { Highlighter } from "../ui/highlighter";
-import { Card, CardTitle, CardContent } from "../ui/card";
 import { EcosystemCard } from "./components/ecosystemCard";
 import { EcosystemBadgeCard } from "./components/ecosystemBadgeCard";
+import type { SurfaceAccent } from "../ui/surface-card";
 
-const pillars = [
+const pillars: {
+  number: number;
+  title: string;
+  accent: SurfaceAccent;
+  items: string[];
+}[] = [
   {
     number: 1,
     title: "Comunidade e interação",
-    titleColor: "text-cyan-400",
+    accent: "cyan",
     items: [
       "Compartilhamento de oportunidades",
       "Troca de experiências",
@@ -27,7 +29,7 @@ const pillars = [
   {
     number: 2,
     title: "Conteúdo e divulgação",
-    titleColor: "text-pink-400",
+    accent: "pink",
     items: [
       "Divulgação de eventos",
       "Atualizações da comunidade",
@@ -38,7 +40,7 @@ const pillars = [
   {
     number: 3,
     title: "Centralização e crescimento",
-    titleColor: "text-green-400",
+    accent: "green",
     items: [
       "Eventos de tecnologia",
       "Hackathons e Ideathons",
@@ -48,20 +50,24 @@ const pillars = [
   },
 ];
 
-const badges = [
-  {
-    icon: <BsCalendarEvent className="text-lg text-cyan-400" />,
-    text: "Eventos toda semana",
-  },
-  {
-    icon: <HiOutlineUserGroup className="text-lg text-cyan-400" />,
-    text: "Networking real",
-  },
-  {
-    icon: <IoRocketOutline className="text-lg text-cyan-400" />,
-    text: "Crescimento acelerado",
-  },
-];
+const badges: { icon: React.ReactNode; text: string; accent: SurfaceAccent }[] =
+  [
+    {
+      icon: <BsCalendarEvent className="text-lg text-white" />,
+      text: "Eventos toda semana",
+      accent: "cyan",
+    },
+    {
+      icon: <HiOutlineUserGroup className="text-lg text-white" />,
+      text: "Networking real",
+      accent: "blue",
+    },
+    {
+      icon: <IoRocketOutline className="text-lg text-white" />,
+      text: "Crescimento acelerado",
+      accent: "indigo",
+    },
+  ];
 
 export default function Ecosystem() {
   const sectionRef = useScrollAnimation();
@@ -70,40 +76,43 @@ export default function Ecosystem() {
     <section
       id="ecosystem"
       ref={sectionRef}
-      className="flex flex-col justify-center items-center min-h-[90vh] py-16 px-4 md:px-6 w-full bg-gradient-to-r from-[#010411] via-[#080731] to-[#031c55] relative overflow-hidden"
+      className="scroll-mt-28 relative flex min-h-[90vh] w-full flex-col items-center justify-center overflow-hidden bg-gradient-to-r from-[#010411] via-[#080731] to-[#031c55] px-4 py-16 md:px-6"
     >
-      <div className="absolute top-1/3 right-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-blue-600/[0.03] rounded-full blur-3xl pointer-events-none" />
+      <div className="pointer-events-none absolute top-1/3 right-1/4 h-[500px] w-[500px] -translate-y-1/2 rounded-full bg-blue-600/[0.03] blur-3xl" />
 
-      <h2 className="text-xl sm:text-2xl md:text-6xl font-bold text-center text-white mb-3 animate-on-scroll z-10">
+      <h2 className="animate-on-scroll z-10 mb-3 text-center text-xl font-bold text-white sm:text-2xl md:text-6xl">
         Ecossistema{" "}
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 italic">Hyphen</span>
+        <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent italic">
+          Hyphen
+        </span>
       </h2>
 
-      <div className="text-white text-center text-sm sm:text-base md:text-sm mb-10 md:mb-12 max-w-2xl px-2 animate-on-scroll z-10 italic">
-        Três canais, um objetivo:{ " "}
+      <div className="animate-on-scroll z-10 mb-10 max-w-2xl px-2 text-center text-sm text-white italic sm:text-base md:mb-12 md:text-sm">
+        Três canais, um objetivo:{" "}
         <Highlighter action="highlight" color="blue" animationDuration={2000}>
           conectar pessoas, oportunidades e tecnologia.
         </Highlighter>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-6xl mb-8 z-10">
+      <div className="z-10 mb-8 grid w-full max-w-6xl grid-cols-1 gap-6 md:grid-cols-3">
         {pillars.map((pillar) => (
           <EcosystemCard
             key={pillar.title}
             number={pillar.number}
             title={pillar.title}
-            titleColor={pillar.titleColor}
+            accent={pillar.accent}
             items={pillar.items}
           />
         ))}
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full max-w-6xl z-10">
+      <div className="z-10 grid w-full max-w-6xl grid-cols-1 gap-4 sm:grid-cols-3">
         {badges.map((badge) => (
           <EcosystemBadgeCard
             key={badge.text}
             icon={badge.icon}
             text={badge.text}
+            accent={badge.accent}
           />
         ))}
       </div>
