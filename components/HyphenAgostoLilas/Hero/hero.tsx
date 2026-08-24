@@ -8,18 +8,9 @@ const LAW_FACTS = [
 
 export function AgostoHero() {
   return (
-    <section className="relative w-full overflow-hidden px-5 pt-16 pb-12 md:pt-24 md:pb-20">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -top-32 left-1/2 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-[#7C3AED]/25 blur-[120px]"
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute top-1/2 -right-24 h-[380px] w-[380px] rounded-full bg-[#C9A6F5]/10 blur-[110px]"
-      />
-
+    <section className="w-full px-5 pt-16 pb-12 md:pt-24 md:pb-20">
       {/* Acima da dobra: entra na carga, não no scroll. */}
-      <div className="relative z-10 mx-auto flex w-full max-w-4xl flex-col gap-7">
+      <div className="mx-auto flex w-full max-w-4xl flex-col gap-7">
         <FadeIn immediate>
           <Eyebrow>recife · estudantes de tecnologia</Eyebrow>
         </FadeIn>

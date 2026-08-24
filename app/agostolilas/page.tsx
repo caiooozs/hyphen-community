@@ -15,10 +15,6 @@ export const metadata: Metadata = {
   title: "Agosto Lilás — Hyphen Community",
   description:
     "Nem toda violência deixa hematoma. Teste o que você sabe sobre os 5 tipos de violência da Lei Maria da Penha e descubra por onde pedir ou oferecer ajuda.",
-  // O laço roxo vem de `app/agostolilas/icon.svg` (convenção de arquivo).
-  // O favicon.ico da raiz continua sendo emitido junto — é o padrão
-  // recomendado: .ico para browsers antigos, .svg para os modernos, que
-  // preferem o vetorial por causa do sizes="any".
 };
 
 export const viewport: Viewport = {

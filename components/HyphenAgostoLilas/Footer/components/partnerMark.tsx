@@ -1,14 +1,18 @@
 import Image from "next/image";
 
 import type { Partner } from "../../data/partners";
+import Link from "next/link";
 
-/** Logo de parceiro institucional, exibido sem moldura nem fundo. */
-export function PartnerMark({ name, logo, className }: Partner) {
+export function PartnerMark({ name, logo, className, link }: Partner) {
   return (
+    <>
+    <Link href={link} target="_blank">
     <Image
       src={logo}
       alt={name}
-      className={`${className} w-auto object-contain`}
+      className={`${className} w-auto object-contain transition-all transform hover:scale-105`}
     />
+    </Link>
+    </>
   );
 }
