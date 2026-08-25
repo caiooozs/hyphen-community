@@ -13,19 +13,21 @@ export function AgostoCare() {
   return (
     <Section id="ajudar" eyebrow="se você desconfia de algo">
       <Panel className="flex flex-col gap-6">
-        <SectionTitle>Não fique na dúvida. Pergunte, ajude, ligue.</SectionTitle>
+        <SectionTitle>
+          Não fique na dúvida. Pergunte, ajude, ligue.
+        </SectionTitle>
 
         <div className="flex flex-col gap-4">
           <p className="text-sm leading-relaxed text-white/65 sm:text-base">
             Se você percebe que alguém pode estar sofrendo qualquer tipo de
-            violência, seja ela física, psicológica, sexual, patrimonial ou moral, não
-            hesite em oferecer ajuda ou acionar a polícia. Um &ldquo;você está
-            bem?&rdquo; dito em particular, ou uma ligação pro 190 num momento de
-            risco, pode ser o que muda a situação de alguém.
+            violência, seja ela física, psicológica, sexual, patrimonial ou
+            moral, não hesite em oferecer ajuda ou acionar a polícia. Um
+            &ldquo;você está bem?&rdquo; dito em particular, ou uma ligação pro
+            190 num momento de risco, pode ser o que muda a situação de alguém.
           </p>
           <p className="text-sm leading-relaxed text-white/65 sm:text-base">
-            Ao mesmo tempo, cuidado nunca é demais. Agir com atenção protege você
-            e protege quem você quer ajudar.
+            Ao mesmo tempo, cuidado nunca é demais. Agir com atenção protege
+            você e protege quem você quer ajudar.
           </p>
         </div>
 
@@ -49,9 +51,10 @@ export function AgostoCare() {
           />
           <span>
             <strong className="font-semibold text-white">
-              Nunca confronte quem está agredindo sozinho(a).
+              Estando sozinho(a), nunca confronte quem está agredindo.
             </strong>{" "}
-            Priorize sua segurança e a da pessoa antes de qualquer atitude. Pedir ajuda também é ajudar.
+            Priorize sua segurança e o da pessoa antes de qualquer atitude.
+            Pedir ajuda também é ajudar.{" "}
           </span>
         </p>
       </Panel>
