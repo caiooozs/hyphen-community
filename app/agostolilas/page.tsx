@@ -7,7 +7,6 @@ import AgostoTech from "@/components/HyphenAgostoLilas/Tech/tech";
 import AgostoBench from "@/components/HyphenAgostoLilas/Bench/bench";
 import AgostoCare from "@/components/HyphenAgostoLilas/Care/care";
 import AgostoHelp from "@/components/HyphenAgostoLilas/Help/help";
-import AgostoManifesto from "@/components/HyphenAgostoLilas/Manifesto/manifesto";
 import AgostoFooter from "@/components/HyphenAgostoLilas/Footer/footer";
 import { FadeInNoScriptFallback } from "@/components/HyphenAgostoLilas/ui/fadeIn";
 
@@ -42,7 +41,7 @@ export default function HyphenAgostoLilas() {
           <AgostoBench />
           <AgostoCare />
           <AgostoHelp />
-          </main>
+        </main>
 
         <AgostoFooter />
       </div>
