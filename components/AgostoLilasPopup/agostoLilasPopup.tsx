@@ -111,7 +111,7 @@ export function AgostoLilasPopup() {
             href="/agostolilas"
             className="group/cta inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#2A1636] transition-all hover:-translate-y-0.5 hover:bg-white/90 focus-visible:ring-2 focus-visible:ring-[#C9A6F5] focus-visible:outline-none"
           >
-            Me concientizar
+            Me conscientizar
             <FiArrowRight className="text-base transition-transform duration-300 group-hover/cta:translate-x-1" />
           </Link>
 
