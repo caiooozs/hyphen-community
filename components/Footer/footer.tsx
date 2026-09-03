@@ -32,6 +32,7 @@ const navigation = [
   { label: "Comunidade", href: "#ecosystem" },
   { label: "Conectar-se", href: "#channels" },
   { label: "Equipe", href: "#team" },
+  { label: "Agosto Lilás", href: "/agostolilas" },
 ];
 
 const highlights = [
@@ -86,16 +87,27 @@ export default function Footer() {
               Navegação
             </h3>
             <ul className="mt-4 flex flex-col gap-3">
-              {navigation.map((item) => (
-                <li key={item.href}>
-                  <a
-                    href={item.href}
-                    className="text-sm text-white/60 transition-colors hover:text-white"
-                  >
-                    {item.label}
-                  </a>
-                </li>
-              ))}
+              {navigation.map((item) =>
+                item.href.startsWith("#") ? (
+                  <li key={item.href}>
+                    <a
+                      href={item.href}
+                      className="text-sm text-white/60 transition-colors hover:text-white"
+                    >
+                      {item.label}
+                    </a>
+                  </li>
+                ) : (
+                  <li key={item.href}>
+                    <Link
+                      href={item.href}
+                      className="text-sm text-white/60 transition-colors hover:text-white"
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                ),
+              )}
             </ul>
           </div>
 
